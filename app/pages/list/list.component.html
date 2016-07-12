@@ -1,0 +1,14 @@
+<StackLayout>
+    <Button text="TAP" (tap)="onTap()"></Button>
+
+    <ListView [items]="locations" row="1" class="small-spacing">
+        <template let-item="item">
+            <GridLayout columns="*, auto">
+                <Label [text]="item.name" class="medium-spacing" col="0" (tap)="goToDetail(item)"></Label>
+                <StackLayout col="1" class="delete-container" (tap)="delete(item, index)">
+                    <Image src="res://delete"></Image>
+                </StackLayout>
+            </GridLayout>
+        </template>
+    </ListView>
+</StackLayout>
